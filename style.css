@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: radial-gradient(circle at top, #2b3245, #11141c 70%);
+}
+
+.scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== Svetafor korpusi ===== */
+.traffic-light {
+  width: 130px;
+  padding: 22px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  background: linear-gradient(90deg, #1a1a1a, #333 50%, #1a1a1a);
+  border: 4px solid #0d0d0d;
+  border-radius: 28px;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    inset 0 2px 4px rgba(255, 255, 255, 0.08);
+}
+
+.visor-wrap {
+  position: relative;
+}
+
+/* Chiroq ustidagi soyabon */
+.visor {
+  position: absolute;
+  top: -6px;
+  left: -8px;
+  width: 106px;
+  height: 50px;
+  border-radius: 50px 50px 0 0;
+  border-top: 8px solid #0d0d0d;
+  pointer-events: none;
+}
+
+/* ===== Chiroqlar (o'chiq holat) ===== */
+.light {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 4px solid #0a0a0a;
+  box-shadow: inset 0 -8px 16px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+.light.red {
+  background: radial-gradient(circle at 35% 35%, #5a1a1a, #2a0505);
+}
+
+.light.yellow {
+  background: radial-gradient(circle at 35% 35%, #5a4a12, #2a2004);
+}
+
+.light.green {
+  background: radial-gradient(circle at 35% 35%, #154a24, #03200b);
+}
+
+/* ===== Yoniq holat (keyinchalik JS orqali "active" class qo'shiladi) ===== */
+.light.red.active {
+  background: radial-gradient(circle at 35% 35%, #ff8a8a, #ff1a1a 45%, #b30000);
+  box-shadow:
+    0 0 30px #ff1a1a,
+    0 0 70px rgba(255, 26, 26, 0.6),
+    inset 0 -6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.light.yellow.active {
+  background: radial-gradient(circle at 35% 35%, #fff3a0, #ffcc00 45%, #b38f00);
+  box-shadow:
+    0 0 30px #ffcc00,
+    0 0 70px rgba(255, 204, 0, 0.6),
+    inset 0 -6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.light.green.active {
+  background: radial-gradient(circle at 35% 35%, #a0ffb8, #00e64d 45%, #009933);
+  box-shadow:
+    0 0 30px #00e64d,
+    0 0 70px rgba(0, 230, 77, 0.6),
+    inset 0 -6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Ustun ===== */
+.pole {
+  width: 22px;
+  height: 160px;
+  background: linear-gradient(90deg, #2a2a2a, #6b6b6b 50%, #2a2a2a);
+}
+
+.base {
+  width: 120px;
+  height: 18px;
+  border-radius: 10px 10px 4px 4px;
+  background: linear-gradient(180deg, #555, #222);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== Tugmalar ===== */
+.controls {
+  margin-top: 40px;
+  display: flex;
+  gap: 14px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+  transition:
+    transform 0.15s ease,
+    filter 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.15);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-red {
+  background: linear-gradient(180deg, #ff4d4d, #c00000);
+}
+
+.btn-yellow {
+  background: linear-gradient(180deg, #ffd633, #d9a300);
+  color: #222;
+}
+
+.btn-green {
+  background: linear-gradient(180deg, #33e070, #00992e);
+}
